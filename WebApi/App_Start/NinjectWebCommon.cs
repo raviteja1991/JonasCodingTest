@@ -83,7 +83,9 @@ namespace WebApi.App_Start
                 return config.CreateMapper();
             }).InSingletonScope();
             kernel.Bind<ICompanyService>().To<CompanyService>();
+            kernel.Bind<IEmployeeService>().To<EmployeeService>();
             kernel.Bind<ICompanyRepository>().To<CompanyRepository>();
+            kernel.Bind<IEmployeeRepository>().To<EmployeeRepository>();
             kernel.Bind(typeof(IDbWrapper<>)).To(typeof(InMemoryDatabase<>));
         }
     }
